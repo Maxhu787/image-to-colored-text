@@ -42,8 +42,8 @@ window.addEventListener('load', (event) => {
 
     let output = document.getElementById('output');
 
-    for(let i = 0; i < canvasWidth; i++) {
-    for (var j = 1; j < canvasHeight; j++) {
+    for (let i = 0; i < canvasWidth; i++) {
+        for (var j = 1; j < canvasHeight; j++) {
         let x = i;
         let y = j;
         const pixel = ctx.getImageData(x, y, 1, 1);
@@ -51,7 +51,7 @@ window.addEventListener('load', (event) => {
 
         const rgba = `rgba(${data[0]}, ${data[1]}, ${data[2]}, ${data[3] / 255})`;
 
-        let outputElem = document.createElement("div")
+        let outputElem = document.createElement("p")
         outputElem.classList.add("output-elem")
         outputElem.textContent = "0";
         /*output.innerHTML += "<p style='color:" + rgba + ";'>0</p>";*/
