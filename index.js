@@ -58,5 +58,7 @@ window.addEventListener('load', (event) => {
         outputElem.style.background = rgba;
         output.appendChild(outputElem);
     };
+        let newLine = document.createElement("div");
+    output.appendChild(newLine);
 }
 })
