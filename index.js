@@ -51,7 +51,7 @@ window.addEventListener('load', (event) => {
 
         const rgba = `rgba(${data[0]}, ${data[1]}, ${data[2]}, ${data[3] / 255})`;
 
-        let outputElem = document.createElement("p")
+        let outputElem = document.createElement("div")
         outputElem.classList.add("output-elem")
         outputElem.textContent = "0";
         /*output.innerHTML += "<p style='color:" + rgba + ";'>0</p>";*/
