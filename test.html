@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+   <canvas id="canvas"></canvas>
+   <script>
+        window.addEventListener('load', (event) => {
+            const img = new Image();
+            img.crossOrigin = "anonymous";
+            img.src = "./test.jpg";
+            const canvas = document.getElementById("canvas");
+            const ctx = canvas.getContext("2d");
+
+            //const canvasWidth = window.innerWidth;
+            //const canvasHeight = window.innerHeight;
+
+
+            ctx.canvas.width = window.innerWidth;
+            ctx.canvas.height = window.innerHeight;
+
+            img.addEventListener("load", () => {
+                //ctx.drawImage(img, 0, 0);
+                ctx.drawImage(img, 0, 0, img.width * 2, img.height * 2);
+                img.style.display = "none";
+            });
+        });
+    </script>
+</body>
+
+</html>
