@@ -7,20 +7,21 @@ const ctx = canvas.getContext("2d");
 //const canvasWidth = canvas.width;
 //const canvasHeight = canvas.height;
 
-const canvasWidth = window.innerWidth;
-const canvasHeight = window.innerHeight;
+const canvasWidth = window.innerWidth * 1;
+const canvasHeight = window.innerHeight * 1;
 
 
 //ctx.canvas.width = window.innerWidth;
 //ctx.canvas.height = window.innerHeight;
 
-ctx.canvas.width = window.innerWidth;
-ctx.canvas.height = window.innerHeight;
+ctx.canvas.width = window.innerWidth * 1;
+ctx.canvas.height = window.innerHeight * 1;
 
 
 img.addEventListener("load", () => {
     //ctx.drawImage(img, 0, 0);
-    ctx.drawImage(img, -100, -100, img.width *  3, img.height * 3);
+    //ctx.drawImage(img, -100, -100, img.width *  3, img.height * 3);
+    ctx.drawImage(img, -100, -100, img.width * 3, img.height * 3);
     img.style.display = "none";
 });
 const hoveredColor = document.getElementById("hovered-color");
@@ -70,6 +71,7 @@ window.addEventListener('load', (event) => {
             outputElem.classList.add("output-elem")
             outputElem.textContent = "0";
             outputElem.style.color = rgba;
+            //outputElem.style.background = rgba;
             output.appendChild(outputElem);
         };
         let newLine = document.createElement("div");
