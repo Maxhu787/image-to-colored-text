@@ -7,21 +7,23 @@ const ctx = canvas.getContext("2d");
 //const canvasWidth = canvas.width;
 //const canvasHeight = canvas.height;
 
-const canvasWidth = window.innerWidth * 1;
-const canvasHeight = window.innerHeight * 1;
+const widthHeight_var = 1;
+
+const canvasWidth = window.innerWidth * widthHeight_var;
+const canvasHeight = window.innerHeight * widthHeight_var;
 
 
 //ctx.canvas.width = window.innerWidth;
 //ctx.canvas.height = window.innerHeight;
 
-ctx.canvas.width = window.innerWidth * 1;
-ctx.canvas.height = window.innerHeight * 1;
+ctx.canvas.width = window.innerWidth * widthHeight_var;
+ctx.canvas.height = window.innerHeight * widthHeight_var;
 
 
 img.addEventListener("load", () => {
     //ctx.drawImage(img, 0, 0);
     //ctx.drawImage(img, -100, -100, img.width *  3, img.height * 3);
-    ctx.drawImage(img, -100, -100, img.width * 3, img.height * 3);
+    ctx.drawImage(img, 0, 0, img.width * 2, img.height * 2);
     img.style.display = "none";
 });
 const hoveredColor = document.getElementById("hovered-color");
@@ -58,8 +60,9 @@ window.addEventListener('load', (event) => {
         output.appendChild(newLine);
     }*/
     //
-    for (let i = 0; i < canvasHeight; i = i + 18) {
-        for (var j = 1; j < canvasWidth; j = j + 9) {
+    const drawOutput_var = 14;
+    for (let i = 0; i < canvasHeight; i = i + drawOutput_var) {
+        for (var j = 1; j < canvasWidth; j = j + (drawOutput_var / 2)) {
             let x = j;
             let y = i;
             const pixel = ctx.getImageData(x, y, 1, 1);
@@ -69,7 +72,9 @@ window.addEventListener('load', (event) => {
 
             let outputElem = document.createElement("div")
             outputElem.classList.add("output-elem")
-            outputElem.textContent = "0";
+            //let letters = ["g", "4", "o", "2"];
+            //outputElem.textContent = letters[Math.floor(Math.random() * letters.length)];
+            outputElem.textContent = '8';
             outputElem.style.color = rgba;
             //outputElem.style.background = rgba;
             output.appendChild(outputElem);
